@@ -6,7 +6,7 @@ Follow along on the [HashiCorp Learn platform](https://learn.hashicorp.com/tutor
 
 I. Create a local SSH key
 
-ssh-keygen -t rsa -C "your_email@example.com" -f ./tf-packer
+`$ ssh-keygen -t rsa -C "your_email@example.com" -f ./tf-packer`
 
 II. Packer image
 
@@ -24,4 +24,14 @@ II. Packer image
 
 IV. Build Packer image
 
-packer build image.pkr.hcl
+`$ packer build image.pkr.hcl`
+
+V. Deploy your Packer image with Terraform
+
+`$ cd ../instances`
+
+In `main.tf` replace `ami attribute with the AMI ID you received from `Packer build`.
+
+VI. Destroy the VM
+
+`$ terraform destroy`
