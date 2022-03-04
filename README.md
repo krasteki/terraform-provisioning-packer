@@ -25,3 +25,16 @@ II. Packer image
 IV. Build Packer image
 
 `$ packer build image.pkr.hcl`
+
+V. Deploy your Packer image with Terraform
+
+`$ cd ../instances`
+
+In `main.tf` replace `ami attribute with the AMI ID you received from `Packer build`.
+
+`$ terraform init && terraform apply
+
+VI. Destroy the VM
+
+`$ terraform destroy`
+
